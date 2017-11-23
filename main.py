@@ -36,10 +36,11 @@ def nothing(x):
 
 if __name__ == '__main__':
     # inicjalizacja kamery argument to numer podlaczonej kamerki: pierwsza=0,druga=1 itd.
+    face_haar_cascade = cv2.CascadeClassifier('Trained_Models/haarcascade_frontalface_default.xml')
     cap = cv2.VideoCapture(0)
     while (True):
         ret, frame = cap.read()
-        cut_frame = frame[0:240, 0:640]
+        # cut_frame = frame[0:240, 0:640]
 
         ##      threshold = threshhold_filter(frame, 120)
         # threshold = threshold_gauss(frame, 115, 1)
@@ -49,10 +50,18 @@ if __name__ == '__main__':
 
 
 
-        edge = canny_edge_det(frame, 150, 170)
+        # edge = canny_edge_det(frame, 150, 170)
         # frame[0:240, 0:640] = edge
 
-        cv2.imshow('frame', edge)
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        faces = face_haar_cascade.detectMultiScale(gray, 1.3, 5)
+        for (x,y,w,h) in faces:
+            cv2.rectangle(frame, (x,y), (x+w, y+h), (255, 0, 0), 2)
+            roi_gray = gray[y:y+h, x:x+w]
+            roi_color = frame[y:y + h, x:x + w]
+
+
+        cv2.imshow('frame', frame)
         if cv2.waitKey(1) % 0xFF == ord('q'):
             break
 
