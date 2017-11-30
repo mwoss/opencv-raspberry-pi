@@ -1,1 +1,33 @@
-"# opencv_raspberry_pi" 
+# Video capture on RaspberryPie using OpenCV lib
+
+Small program allowing video capturing on RaspberryPie. App shares few basic video filters like candy edge detection,
+Gauss threshold function or even Face recognition using Intel haar cascade. 
+
+## Usage
+
+```
+ >> python3 record.py --fun [function_name] --x [x_res_bound] --y [y_res_bound]
+ #for example:
+ >> python3 record.py --fun gauss-threshold --x 300 -y 400
+```
+
+```
+  --fun [function_name] => Function that is applied on captured video data, chose from:
+                            threshold,
+                            gauss-threshold,
+                            sobel-det (Sobel edge detection),
+                           laplacian-det (Laplacian edge detection),
+                            candy-edge-det (Candy edge detection),
+                            face-rec (Face recognition function),
+                            none (None function is applied on video)
+  --x [x_res_bound]     => Width bound. Range 0 to 640
+  --y [y_res_bound]     => Height bound. Range 0 to 480.
+```
+
+## Requirements
+ - Python 3.X
+ - OpenCV library
+ - Numpay library
+ 
+##### Note: Instruction for installing OpenvCV library on RaspberryPie in install_instruction.pdf (Polish language) or at [pyimagesearch.com](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
+
