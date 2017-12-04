@@ -1,6 +1,6 @@
 # Video capture on RaspberryPie using OpenCV lib
 
-Small program allowing video capturing on RaspberryPie. App shares few basic video filters like candy edge detection,
+Small program allowing video capture on Raspberry Pi. App shares few basic video filters like candy edge detection,
 Gauss threshold function or even Face recognition using Intel haar cascade. 
 
 ## Usage
