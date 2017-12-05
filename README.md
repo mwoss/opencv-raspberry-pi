@@ -16,12 +16,12 @@ Gauss threshold function or even Face recognition using Intel haar cascade.
                             threshold,
                             gauss-threshold,
                             sobel-det (Sobel edge detection),
-                           laplacian-det (Laplacian edge detection),
+                            laplacian-det (Laplacian edge detection),
                             candy-edge-det (Candy edge detection),
                             face-rec (Face recognition function),
                             none (None function is applied on video)
-  --x [x_res_bound]     => Width bound. Range 0 to 640
-  --y [y_res_bound]     => Height bound. Range 0 to 480.
+  --x [x_res_bound]     => Width bound. Range 0 to MAX_CAM_RES_X.
+  --y [y_res_bound]     => Height bound. Range 0 to MAX_CAM_RES_Y.
 ```
 
 ## Requirements
