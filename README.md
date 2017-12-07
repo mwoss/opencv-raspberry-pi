@@ -29,5 +29,5 @@ Gauss threshold function or even Face recognition using Intel haar cascade.
  - OpenCV library
  - Numpay library
  
-##### Note: Instruction for installing OpenvCV library on RaspberryPie in install_instruction.pdf (Polish language) or at [pyimagesearch.com](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
+##### Note: Instruction for installing OpenvCV library on Raspberry Pi in install_instruction.pdf (Polish language) or at [pyimagesearch.com](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 
