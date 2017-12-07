@@ -29,7 +29,7 @@ Code can be used on Raspberry Pi, as well as on normal PC.
 ## Requirements
  - Python 3.X
  - OpenCV library
- - Numpay library
+ - Numpy library
  
 ##### Note: Instruction for installing OpenvCV library on Raspberry Pi in install_instruction.pdf (Polish language) or at [pyimagesearch.com](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 
