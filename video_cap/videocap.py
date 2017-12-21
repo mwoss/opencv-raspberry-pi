@@ -39,7 +39,6 @@ class VideoCap:
             self.args.append(int(input("Please, input " + str(arg) + " parameter value: ")))
 
     def _none_filter(self, frame):
-        # oh boi, that's ugly; gonna refactor it later
         return frame
 
     def _threshold_gauss(self,
@@ -92,7 +91,7 @@ class VideoCap:
         'face-rec': ['_face_detection'],
         'threshold': ['_threshhold_filter', 'threshold'],
         'gauss-threshold': ['_threshold_gauss', 'block_size', 'c'],
-        'sobel-det': ['_sobel_edge_det', 'x', 'y'],
+        'sobel-det': ['_sobel_edge_det', 'x derivative degree', 'y derivative degree'],
         'laplacian-det': ['_laplacian_edge_detecion'],
         'canny-edge-det': ['_canny_edge_det', 'min', 'max'],
         'none': ['_none_filter']

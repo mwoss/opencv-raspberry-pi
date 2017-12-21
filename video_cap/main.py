@@ -9,11 +9,11 @@ parser.add_argument('--fun', type=str,
                     help="Available functions: threshold, gauss-threshold, sobel-det,"
                          " laplacian-det, canny-edge-det, face-rec, none", required=True, metavar="FUNC_NAME")
 parser.add_argument('-x', type=int, nargs=2, default=[0, 0],
-                    help="Bound of filter function on X axis. First val < Second val",
+                    help="Region Of Interest for filter on X axis [-x startcoord endcoord] ex. -x 100 300",
                     metavar='X_RESOLUTIONS'
                     )
 parser.add_argument('-y', type=int, nargs=2, default=[0, 0],
-                    help="Bound of filter function on Y axis. First val < Second val",
+                    help="Region Of Interest for filter on Y axis [-y startcoord endcoord] ex. -y 50 150",
                     metavar='Y_RESOLUTIONS')
 
 
