@@ -35,6 +35,7 @@ class VideoCap:
         cv2.destroyAllWindows()
 
     def get_arguments(self):
+        print("Input user defined function arguments :)")
         for arg in self.functions[self.func_name][1:]:
             self.args.append(int(input("Please, input " + str(arg) + " parameter value: ")))
 
@@ -88,8 +89,8 @@ class VideoCap:
         return frame
 
     functions = {
-        'face-rec': ['_face_detection'],
-        'threshold': ['_threshhold_filter', 'threshold'],
+        'face-recognition': ['_face_detection'],
+        'basic-threshold': ['_threshhold_filter', 'threshold'],
         'gauss-threshold': ['_threshold_gauss', 'block_size', 'c'],
         'sobel-det': ['_sobel_edge_det', 'x derivative degree', 'y derivative degree'],
         'laplacian-det': ['_laplacian_edge_detecion'],
