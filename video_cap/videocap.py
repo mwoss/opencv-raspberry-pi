@@ -88,6 +88,11 @@ class VideoCap:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
         return frame
 
+    """
+    Dictionary of available video effects.
+        @key: function name used in arg_parser
+        @value: list of class function name and user-defined arguments
+    """
     functions = {
         'face-recognition': ['_face_detection'],
         'basic-threshold': ['_threshhold_filter', 'threshold'],
