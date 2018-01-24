@@ -15,12 +15,12 @@ Code can be used on Raspberry Pi, as well as on normal PC.
 
 ```
   --fun [function_name] => Function that is applied on captured video data, chose from:
-                            threshold,
+                            basic-threshold,
                             gauss-threshold,
                             sobel-det (Sobel edge detection),
                             laplacian-det (Laplacian edge detection),
-                            candy-edge-det (Candy edge detection),
-                            face-rec (Face recognition function),
+                            canny-edge-det (Candy edge detection),
+                            face-recognition (Face recognition function),
                             none (None function is applied on video)
   --x [x_res_bound]     => Width bound. Range 0 to MAX_CAM_RES_X.
   --y [y_res_bound]     => Height bound. Range 0 to MAX_CAM_RES_Y.
