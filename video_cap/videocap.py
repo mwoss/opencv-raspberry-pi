@@ -35,9 +35,11 @@ class VideoCap:
         cv2.destroyAllWindows()
 
     def get_arguments(self):
-        print("Input user defined function arguments :)")
-        for arg in self.functions[self.func_name][1:]:
-            self.args.append(int(input("Please, input " + str(arg) + " parameter value: ")))
+        arguments = self.functions[self.func_name][1:]
+        if arguments.__len__() != 0:
+            print("Input user defined function arguments :)")
+            for arg in arguments:
+                self.args.append(int(input("Please, input " + str(arg) + " parameter value: ")))
 
     def _none_filter(self, frame):
         return frame
@@ -88,10 +90,22 @@ class VideoCap:
             cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
         return frame
 
+    def _cartoon_filter(self, frame, downscale=2, bilateral_steps=5):
+        for _ in range(downscale):
+            frame = cv2.pyrDown(frame)
+        for _ in range(bilateral_steps):
+            frame = cv2.bilateralFilter(frame, d=9, sigmaColor=9, sigmaSpace=7)
+        for _ in range(downscale):
+            frame = cv2.pyrUp(frame)
+        gray_scale = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+        edge = cv2.adaptiveThreshold(cv2.medianBlur(gray_scale, 7), 255,
+                                     cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 2)
+        return cv2.bitwise_and(frame, cv2.cvtColor(edge, cv2.COLOR_GRAY2RGB))
+
     """
     Dictionary of available video effects.
         @key: function name used in arg_parser
-        @value: list of class function name and user-defined arguments
+        @value: list of [class function name, user-defined arguments]
     """
     functions = {
         'face-recognition': ['_face_detection'],
@@ -100,5 +114,6 @@ class VideoCap:
         'sobel-det': ['_sobel_edge_det', 'x derivative degree', 'y derivative degree'],
         'laplacian-det': ['_laplacian_edge_detecion'],
         'canny-edge-det': ['_canny_edge_det', 'min', 'max'],
-        'none': ['_none_filter']
+        'none': ['_none_filter'],
+        'cartoon': ['_cartoon_filter']
     }
