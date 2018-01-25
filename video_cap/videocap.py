@@ -7,7 +7,7 @@ _PATH = 'video_cap/resources/trained_models/haarcascade_frontalface_default.xml'
 class VideoCap:
     def __init__(self, function_name, x_min, y_min, x_max, y_max):
         self.cap = cv2.VideoCapture(0)
-        self.face_haar_cascade = None if function_name != 'face-rec' else cv2.CascadeClassifier(_PATH)
+        self.face_haar_cascade = None if function_name != 'face-recognition' else cv2.CascadeClassifier(_PATH)
         self.func_name = function_name
         self.fun = getattr(VideoCap, self.functions[function_name][0])
         self.args = []
