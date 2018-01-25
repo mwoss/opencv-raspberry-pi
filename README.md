@@ -21,6 +21,7 @@ Code can be used on Raspberry Pi, as well as on normal PC.
                             laplacian-det (Laplacian edge detection),
                             canny-edge-det (Candy edge detection),
                             face-recognition (Face recognition function),
+                            cartoon,
                             none (None function is applied on video)
   --x [x_res_bound]     => Width bound. Range 0 to MAX_CAM_RES_X.
   --y [y_res_bound]     => Height bound. Range 0 to MAX_CAM_RES_Y.
